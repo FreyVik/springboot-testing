@@ -1,0 +1,15 @@
+loggin:
+  level:
+    root: OFF
+    org:
+      springframework: OFF
+      hibernate:
+        SQL: debug
+
+spring:
+  main:
+    banner-mode: OFF
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
