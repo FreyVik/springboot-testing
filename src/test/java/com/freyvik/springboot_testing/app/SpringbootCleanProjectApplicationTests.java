@@ -1,10 +1,10 @@
-package com.freyvik.springboot_testing.rest.app;
+package com.freyvik.springboot_testing.app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringbootTestingApplicationTests {
+class SpringbootCleanProjectApplicationTests {
 
 	@Test
 	void contextLoads() {
