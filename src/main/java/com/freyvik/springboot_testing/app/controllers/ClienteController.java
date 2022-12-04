@@ -8,13 +8,18 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.freyvik.springboot_testing.app.models.dao.ClienteDao;
 import com.freyvik.springboot_testing.app.models.dao.ClienteJpaRepository;
 import com.freyvik.springboot_testing.app.models.dto.ClienteResponseDto;
+import com.freyvik.springboot_testing.app.models.dto.SaveClienteDTO;
 import com.freyvik.springboot_testing.app.models.entity.Cliente;
+
+import jakarta.validation.Valid;
 
 @Controller
 public class ClienteController {
@@ -46,5 +51,10 @@ public class ClienteController {
 		
 		return new ResponseEntity<String>(result, HttpStatus.OK);
 	}
-
+	
+	@PutMapping("/save")
+	public ResponseEntity<SaveClienteDTO> save(@Valid @RequestBody SaveClienteDTO saveRequest) {
+		
+		return ResponseEntity.ok(saveRequest);
+	}
 }
